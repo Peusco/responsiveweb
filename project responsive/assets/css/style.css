@@ -1,0 +1,167 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+/* ROOT */
+:root{
+    --header-height: 3rem;
+    
+    /*colors*/
+    --bg-clr: #5f6e60;
+    --primary-dark: #5f6e60;
+    --primary-darkest: #A83E51;
+    --white-clr: #fff5f5;
+
+    /*fonts & typo*/
+    --body-font-family: 'Montserrat', sans-serif;
+    --big-font-size: 2.5rem;
+    --regular-font-size: .938rem;
+
+    /*z-index-fixed*/
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px){
+    :root{
+        --big-font-size: 5rem;
+        --regular-font-size: 1rem;
+    }
+}
+
+/* BASIC RESET */
+*,
+::before,
+::after{
+    box-sizing: border-box; /*invest*/
+}
+
+body{
+    margin: var(--header-height) 0 0 0;
+    padding: 0;
+    font-family: var(--body-font-family);
+    font-size: var(--regular-font-size);
+    font-weight: 500;
+}
+
+h1,
+p,
+ul{
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* LAYOUT */
+.body-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: rgb(0, 0, 0);
+}
+
+/* NAVBAR */
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    .nav-menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        padding: 3.5rem 1.5rem 0;
+        background-color: rgba(0, 0, 0, 0.397);
+        backdrop-filter: blur(15px);
+        transition: .5;
+    }
+}
+
+.nav-close{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;    
+}
+
+.nav-item{
+    margin-bottom: 2rem;
+}
+
+.nav-close,
+.nav-link,
+.nav-logo,
+.nav-toggle{
+    color: #cc552a;
+}
+
+.nav-link:hover{
+    color: #72331b;
+}
+
+.nav-toggle{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* SHOW MENU */
+.show{
+    right: 0;
+}
+
+/* HOME AREA */
+.home{
+    background-image: url(https://www.gamingcoffee.com/wp-content/uploads/2020/07/stalker2raytracing-2.png);
+    background-position: center;
+    overflow: hidden;
+}
+
+.home-container{
+    height: calc(100vh -  var(--header-height));
+    grid-template-rows: repeat(2, max-content);
+    row-gap: 1.5rem;
+}
+
+.home-info{
+    color: var(--white-clr);
+    padding-top: 5vh;
+}
+
+.stalker-title{
+    font-size: var(--big-font-size);
+}
+
+.stalker-description{
+    margin-bottom: 1.5rem
+}
+
+
+
+
